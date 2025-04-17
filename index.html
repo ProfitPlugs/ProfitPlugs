@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profit Plugs Vendors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Body and background */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212; /* Dark background */
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Content area */
+    .content {
+      flex-grow: 1;
+      padding: 40px;
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    /* Header */
+    h1 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Product boxes */
+    .product {
+      background: #1e1e1e; /* Darker product boxes */
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    .product h2 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 1.8em;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    .product:hover {
+      transform: translateY(-15px); /* Smooth hover effect */
+      box-shadow: 0 12px 24px rgba(255, 0, 0, 0.5); /* Glowing red */
+    }
+
+    /* Buy Now button */
+    .buy-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: red; /* Glowing red button */
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 0, 0, 0.7);
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background-color: #ff4a4a;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+
+    /* Product grid */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    /* Help and Discord Section */
+    .help-section {
+      margin-top: 40px;
+      color: red;
+      font-size: 1.2em;
+      text-align: left;
+    }
+
+    .discord-section {
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Profit Plugs Vendors</h1>
+
+    <div id="colonge" class="product">
+      <h2>All Vendors Bundle</h2>
+      <a href="https://dragonslayer506.gumroad.com/l/eedgy" class="buy-btn" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product-container">
+      <div id="shoes" class="product">
+        <h2>Shoe Vendor</h2>
+        <a href="https://dragonslayer506.gumroad.com/l/whlqt" class="buy-btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div id="clothes" class="product">
+        <h2>Clothes Vendor</h2>
+        <a href="https://dragonslayer506.gumroad.com/l/ygiks" class="buy-btn" target="_blank">Buy Now</a>
+      </div>
+
+      <div id="colonge" class="product">
+        <h2>Cologne Vendor</h2>
+        <a href="https://dragonslayer506.gumroad.com/l/nyjaw" class="buy-btn" target="_blank">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="help-section">
+      <h3>Need Help?</h3>
+      <p>Email us at: <a href="mailto:dragonslayer69423@yahoo.com" style="color: red;">dragonslayer69423@yahoo.com</a></p>
+    </div>
+
+    <div class="discord-section">
+      <h3>Join our Discord</h3>
+      <a href="https://discord.gg/ZvYsbSJz" style="color: red;">Click here to join our Discord</a>
+    </div>
+  </div>
+
+</body>
+</html>
