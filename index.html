@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit Plug Vendors</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      text-shadow: 0 0 20px white;
+      margin: 30px 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: black;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .product-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .product-card h2 {
+      color: white;
+      font-size: 24px;
+      margin: 10px 0;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    .product-card p {
+      font-size: 18px;
+      color: white;
+      margin: 10px 0;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    .product-card a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border: 2px solid white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .product-card a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: black;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .menu ul {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      list-style-type: none;
+      background-color: black;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .menu:hover ul {
+      display: block;
+    }
+
+    .menu ul li {
+      color: white;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: black;
+      padding: 20px;
+      color: white;
+      margin-top: 50px;
+      font-size: 16px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .product-card {
+        width: 90%;
+      }
+
+      .product-card img {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        width: 90%;
+      }
+
+      .menu {
+        top: 10px;
+        right: 10px;
+      }
+
+      .product-card img {
+        height: 200px;
+      }
+    }
+
+    /* New animation for scrolling */
+    .product-card {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .product-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-on-scroll {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in-on-scroll.in-view {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Profit Plug Vendors</h1>
+
+  <div class="menu">
+    <div class="hamburger-icon">
+      <div style="width: 30px; height: 5px; background-color: white; margin: 6px 0;"></div>
+      <div style="width: 30px; height: 5px; background-color: white; margin: 6px 0;"></div>
+      <div style="width: 30px; height: 5px; background-color: white; margin: 6px 0;"></div>
+    </div>
+    <ul>
+      <li><a href="mailto:dragonslayer69423@gmail.com">Help: Email Us</a></li>
+      <li><a href="https://discord.gg/ZvYsbSJz">Join Our Discord</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <!-- All Vendors Bundle (at the top, larger, more prominent) -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/premium-vector/black-white-outline-diamond_925376-281944.jpg" alt="All Vendors Bundle">
+      <h2>All Vendors Bundle</h2>
+      <p>A step-by-step digital guide to mastering X.</p>
+      <p>Price: $39.99</p>
+      <a href="https://profitplugsvendors.gumroad.com/l/eedgy" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Other products go here (Cologne Vendor, Shoe Vendor, etc.) -->
+
+    <!-- Cologne Vendor -->
+    <div class="product-card fade-in-on-scroll">
+      <img src="https://profitplugsvendors.gumroad.com/l/nyjaw" alt="Cologne Vendor">
+      <h2>Cologne Vendor</h2>
+      <p>High-quality cologne reps for any brand you can think of</p>
+      <p>Price: $10.99</p>
+      <a href="https://profitplugsvendors.gumroad.com/l/nyjaw" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Add all other products here similarly -->
+  </div>
+
+  <footer>
+    <p>All purchases are final. No refunds. <br> <a href="https://discord.gg/ZvYsbSJz">Join Our Discord Server for an Exclusive Discount on the All Vendors Bundle. Find the Discord Link in the Menu.</a></p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.product-card').forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          card.classList.add('in-view');
+        }
+      });
+    });
+
+    // Detect when a product comes into view on scroll
+    document.querySelectorAll('.fade-in-on-scroll').forEach((element) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      });
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
