@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vendor Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid white;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      text-shadow: 0 0 10px white;
+    }
+
+    .menu-toggle {
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: white;
+      text-shadow: 0 0 10px white;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      right: 2rem;
+      top: 4rem;
+      background-color: #000;
+      border: 2px solid white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px white;
+      text-align: right;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .featured {
+      text-align: center;
+      margin-bottom: 4rem;
+      border: 2px solid white;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 0 20px white;
+    }
+
+    .featured img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px white);
+      margin-bottom: 1rem;
+    }
+
+    .featured h2 {
+      font-size: 2rem;
+      text-shadow: 0 0 10px white;
+    }
+
+    .featured p {
+      font-size: 1rem;
+      color: white;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      margin-top: 1rem;
+      border: 1px solid white;
+      border-radius: 1rem;
+      color: white;
+      text-decoration: none;
+      text-shadow: 0 0 5px white;
+      box-shadow: 0 0 15px white;
+      transition: background 0.3s;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #000;
+      padding: 1.5rem;
+      border-radius: 2rem;
+      border: 2px solid white;
+      box-shadow: 0 0 10px white;
+      text-align: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .card img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px white);
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 6px white;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .card .button {
+      font-size: 0.9rem;
+      padding: 0.4rem 1.2rem;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      border-top: 2px solid white;
+      margin-top: 4rem;
+      color: white;
+      text-shadow: 0 0 5px white;
+    }
+
+    @media (max-width: 600px) {
+      .featured img,
+      .card img {
+        width: 150px;
+        height: 150px;
+      }
+      .featured h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vendor Hub</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="mailto:dragonslayer69423@gmail.com">Help</a>
+      <a href="https://discord.gg/ZvYsbSJz" target="_blank">Discord</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="featured fade-in">
+      <img src="https://img.freepik.com/premium-vector/black-white-outline-diamond_925376-281944.jpg" alt="All Vendors Bundle" />
+      <h2>All Vendors Bundle</h2>
+      <p>A step-by-step digital guide to mastering X.</p>
+      <p><strong>$39.99</strong></p>
+      <a class="button" href="https://dragonslayer506.gumroad.com/l/eedgy" target="_blank">Buy on Gumroad</a>
+    </section>
+
+    <section class="products">
+      <!-- Product Cards will go here (same as previously inserted) -->
+    </section>
+  </div>
+
+  <footer>
+    Join Our Discord Server for an Exclusive Discount on the All Vendors Bundle.<br />
+    Find the Discord Link in the Menu.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function (e) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.card').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
