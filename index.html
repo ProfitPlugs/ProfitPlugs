@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profit Plug Vendors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+      background-size: contain;
+      background-repeat: repeat;
+      position: relative;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url('https://i.ibb.co/T8Nc4HP/smoke.gif') center center / cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid white;
+      position: sticky;
+      top: 0;
+      background: black;
+      z-index: 1000;
+      animation: fadeSlideIn 1s ease-out forwards;
+    }
+
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: white;
+      filter: drop-shadow(0 0 8px white);
+      transition: transform 0.3s ease;
+    }
+
+    .title:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      filter: drop-shadow(0 0 6px white);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .menu-dropdown {
+      position: absolute;
+      top: 70px;
+      right: 1rem;
+      background-color: black;
+      border: 2px solid white;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-radius: 12px;
+      filter: drop-shadow(0 0 6px white);
+      animation: fadeIn 0.3s ease-out;
+      width: max-content;
+      min-width: 150px;
+      z-index: 999;
+    }
+
+    .menu-dropdown a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card {
+      background: black;
+      border: 2px solid white;
+      border-radius: 25px;
+      padding: 1rem;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      filter: drop-shadow(0 0 8px white);
+      transition: all 0.4s ease;
+      overflow: hidden;
+      animation: fadeInOut 5s ease-in-out infinite;
+    }
+
+    .product-card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 25px white;
+      filter: drop-shadow(0 0 12px white);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      background-color: white;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+      border: 2px solid white;
+      box-shadow: 0 0 15px white;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card a.button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: black;
+      border: 2px solid white;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      filter: drop-shadow(0 0 5px white);
+    }
+
+    .product-card a.button:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px white;
+    }
+
+    .featured {
+      border: 3px solid white;
+      transform: scale(1.05);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 2rem;
+      border-top: 2px solid white;
+      line-height: 1.6;
+      background-color: black;
+      z-index: 10;
+      position: relative;
+    }
+
+    footer p {
+      filter: drop-shadow(0 0 5px white);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.85; box-shadow: 0 0 10px rgba(255,255,255,0.08); }
+      50% { opacity: 1; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+    }
+
+    @media (min-width: 768px) {
+      .product-section.products {
+        justify-content: space-between;
+      }
+
+      .product-section.products .product-card {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .product-section.products {
+        flex-wrap: wrap;
+      }
+
+      .product-section.products .product-card {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+      }
+
+      .product-section.featured {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">Profit Plug Vendors</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div id="menuDropdown" class="menu-dropdown">
+      <a href="mailto:dragonslayer69423@gmail.com">Help / Contact</a>
+      <a href="https://discord.gg/ZvYsbSJz" target="_blank">Join Discord</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Featured Product -->
+    <section class="product-section featured" style="margin-bottom: 2rem;">
+      <div class="product-card featured">
+        <img src="https://img.freepik.com/premium-vector/black-white-outline-diamond_925376-281944.jpg" alt="All Vendors Bundle">
+        <h2>All Vendors Bundle</h2>
+        <p>A step-by-step digital guide to mastering X.</p>
+        <p>$39.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/eedgy" target="_blank">Buy Now</a>
+      </div>
+    </section>
+
+    <!-- Watch Vendor Bundle (Moved underneath All Vendors Bundle) -->
+    <section class="product-section featured" style="margin-bottom: 2rem;">
+      <div class="product-card featured">
+        <img src="https://i.etsystatic.com/36867827/r/il/62d3be/4194445841/il_fullxfull.4194445841_2vcb.jpg" alt="Watch Vendor Bundle">
+        <h2>Watch Vendor Bundle</h2>
+        <p>High Quality 1:1 luxury and moissanite watches</p>
+        <p>$14.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/dgkbwn" target="_blank">Buy Now</a>
+      </div>
+    </section>
+
+    <!-- All Other Products -->
+    <section class="product-section products">
+      <div class="product-card">
+        <img src="https://th.bing.com/th/id/OIP.fqOt3f86BzVU3gjgYpnnPAHaHa?rs=1&pid=ImgDetMain" alt="Cologne Vendor">
+        <h2>Cologne Vendor</h2>
+        <p>High Quality cologne reps for any brand you can think of</p>
+        <p>$10.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/nyjaw" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.etsystatic.com/33978508/r/il/920e7a/3808088807/il_1140xN.3808088807_nwu0.jpg" alt="Shoe Vendor">
+        <h2>Shoe Vendor</h2>
+        <p>The highest quality shoe reps (4 pairs/ $100)</p>
+        <p>$17.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/whlqt" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://classroomclipart.com/image/static7/preview2/winterjacketblackoutline-60273.jpg" alt="Clothing Vendor">
+        <h2>Clothing Vendor</h2>
+        <p>High quality rep clothing</p>
+        <p>$11.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/ygiks" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://th.bing.com/th/id/R.6cfb45b3f474d759030bbbee9371e110?rik=BI4YyUHzyFGQmQ&pid=ImgRaw&r=0" alt="Lego Vendor">
+        <h2>Lego Vendor</h2>
+        <p>1:1 LEGO vendor</p>
+        <p>$10.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/nmdks" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i.pinimg.com/originals/a7/45/ba/a745ba950094af9f7a7e9370bc6eed13.png" alt="Apple Vendor">
+        <h2>Apple Vendor</h2>
+        <p>High quality 1:1 Apple Products</p>
+        <p>$9.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/rgmhis" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://img.freepik.com/premium-vector/black-white-cartoon-sketched-outline-gift_641503-54607.jpg?w=2000" alt="Misc Items Vendor">
+        <h2>Misc. Items Vendor</h2>
+        <p>This vendor has high quality products of anything you can think of</p>
+        <p>$19.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/ahlad" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/211/307/non_2x/headphone-icon-outline-style-vector.jpg" alt="Electronics Vendor">
+        <h2>Electronics Vendor</h2>
+        <p>Best 1:1 Electronics Vendor</p>
+        <p>$14.99</p>
+        <a class="button" href="https://profitplugsvendors.gumroad.com/l/bsjjhp" target="_blank">Buy Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Profit Plug Vendors</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuDropdown');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
